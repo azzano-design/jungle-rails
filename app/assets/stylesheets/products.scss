@@ -39,16 +39,26 @@ main section.categories-show {
         opacity: 0.3;
         transition: all 0.3s;
       }
-
-      aside.price {
+      aside {
         position: absolute;
         top: 0;
-        right: 0;
         padding: 10px;
-        background-color: #eee;
-        border-top-right-radius: 4px;
-        border-bottom-left-radius: 20px;
         font-size: 0.8em;
+        &.price {
+          right: 0;
+          padding: 10px;
+          background-color: #eee;
+          border-top-right-radius: 4px;
+          border-bottom-left-radius: 20px;
+        }
+        &.sold_out_badge {
+          left: 0;
+          text-transform: uppercase;
+          color:#fff;
+          background-color: #e19997;
+          border-top-left-radius: 4px;
+          border-bottom-right-radius: 20px;
+        }
       }
 
       &:hover {
