@@ -8,6 +8,44 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <div class="panel panel-default items">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @items.each do |item|%>
+          <tr>
+            <td><%=image_tag item.product.image.tiny, alt:item.product.name%></td>
+            <td><%=item.product.name%></td>
+            <td><%=item.product.description%></td>
+            <td><%=item.item_price_cents / 100.0%></td>
+            <td><%=item.total_price_cents / (item.item_price_cents)%></td>
+            <td><%=item.total_price_cents / 100.0%></td>
+          </tr>
+        <% end %>
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="5" style="text-align:right;">
+            TOTAL:
+          </th>
+          <th>
+            <%= @order.total_cents/100.0 %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
