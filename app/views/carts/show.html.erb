@@ -1,14 +1,11 @@
 <section class="cart-show">
-
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
   <% if (cart.size < 1) %>
     <h4>Your cart is empty. Get shopping! </h4><br>
     <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
   <% else %>
-
     <div class="panel panel-default items">
       <table class="table table-bordered">
         <thead>
@@ -37,7 +34,6 @@
         </tfoot>
       </table>
     </div>
-
     <div class="row">
       <div class="col-xs-12">
         <%= form_tag orders_path do %>
