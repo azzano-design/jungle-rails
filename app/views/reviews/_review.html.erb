@@ -1,0 +1,16 @@
+<div class="col-sm-9">
+  <div class="review-block-rate">
+    <% for i in 1..review.rating do %>
+      <span class="glyphicon glyphicon-star btn btn-primary btn-xs" aria-hidden="true"></span>
+    <% end %>
+    <% for i in 1..5-review.rating do %>
+      <span class="glyphicon glyphicon-star btn btn-default btn-xs" aria-hidden="true"></span>
+    <% end %>
+  </div>
+  <div class="review-block-description">
+    <%= review.description %>
+  </div>
+  <% if current_user && current_user.id == review.user_id %>
+    <%= button_to "DELETE", product_review_path(@product, review), class: 'btn btn-danger btn-xs',method: :delete %>
+  <% end %>
+</div>

@@ -81,6 +81,17 @@ main section.products-show {
       max-width: 100%;
     }
   }
+  .review-block-rate {
+    margin: 25px 0px 10px;
+  }
+  span.glyphicon.glyphicon-star.btn {
+    padding: 5px 10px;
+  }
+  .review-block-description {
+      padding: 10px 0px 20px;
+      border-bottom: 1px dotted black;
+      margin-bottom: 10px;
+  }
 }
 
 
